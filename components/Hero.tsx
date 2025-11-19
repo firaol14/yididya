@@ -40,10 +40,11 @@ const Hero = () => {
         </p>
 
         {/* Video Embed */}
-        <div className="relative w-full max-w-3xl mx-auto aspect-video mb-12 rounded-2xl overflow-hidden border border-brand-border/50 shadow-[0_0_40px_rgba(0,200,5,0.15)] group">
-          <div className="absolute inset-0 bg-brand-green/5 group-hover:bg-transparent transition-colors pointer-events-none z-10"></div>
+        <div className="relative w-full max-w-3xl mx-auto aspect-video mb-12 rounded-2xl overflow-hidden border border-brand-border/50 shadow-[0_0_40px_rgba(0,200,5,0.15)]">
           <iframe 
             className="absolute top-0 left-0 w-full h-full"
+            width="560" 
+            height="315" 
             src="https://www.youtube.com/embed/6_nJLK3PyP0?autoplay=1&mute=1&loop=1&playlist=6_nJLK3PyP0&controls=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3" 
             title="YouTube video player" 
             frameBorder="0" 
