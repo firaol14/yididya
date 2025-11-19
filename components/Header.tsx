@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X, Zap, Globe } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const { language, toggleLanguage, t } = useLanguage();
 
   // Function to handle hash navigation if not on home page
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -32,28 +34,46 @@ const Header = () => {
               <div className="w-8 h-8 bg-brand-green rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
                 <Zap className="text-black h-5 w-5" />
               </div>
-              <span className="font-bold text-xl tracking-tight text-white">Yididya Coaching</span>
+              <span className="font-bold text-xl tracking-tight text-white">{t.nav.brand}</span>
             </Link>
           </div>
           
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {isHome && (
               <>
-                <a href="#features" onClick={(e) => handleNavClick(e, 'features')} className="text-brand-text hover:text-white transition-colors text-sm font-medium">Program</a>
-                <a href="#testimonials" onClick={(e) => handleNavClick(e, 'testimonials')} className="text-brand-text hover:text-white transition-colors text-sm font-medium">Stories</a>
-                <a href="#pricing" onClick={(e) => handleNavClick(e, 'pricing')} className="text-brand-text hover:text-white transition-colors text-sm font-medium">Pricing</a>
-                <a href="#faq" onClick={(e) => handleNavClick(e, 'faq')} className="text-brand-text hover:text-white transition-colors text-sm font-medium">FAQ</a>
+                <a href="#features" onClick={(e) => handleNavClick(e, 'features')} className="text-brand-text hover:text-white transition-colors text-sm font-medium">{t.nav.program}</a>
+                <a href="#testimonials" onClick={(e) => handleNavClick(e, 'testimonials')} className="text-brand-text hover:text-white transition-colors text-sm font-medium">{t.nav.stories}</a>
+                <a href="#pricing" onClick={(e) => handleNavClick(e, 'pricing')} className="text-brand-text hover:text-white transition-colors text-sm font-medium">{t.nav.pricing}</a>
+                <a href="#faq" onClick={(e) => handleNavClick(e, 'faq')} className="text-brand-text hover:text-white transition-colors text-sm font-medium">{t.nav.faq}</a>
               </>
             )}
+            
+            {/* Language Toggle */}
+            <button 
+              onClick={toggleLanguage}
+              className="flex items-center space-x-1 bg-brand-green text-black hover:bg-green-400 px-3 py-1.5 rounded-full transition-all transform hover:scale-105 text-xs font-bold shadow-[0_0_10px_rgba(0,200,5,0.2)]"
+            >
+              <Globe className="w-3 h-3" />
+              <span>{language === 'en' ? 'EN' : 'AM'}</span>
+            </button>
+
             <Link 
               to="/booking" 
               className="bg-white text-black hover:bg-gray-200 px-5 py-2 rounded-full font-semibold text-sm transition-all transform hover:scale-105"
             >
-              Apply Now
+              {t.nav.apply}
             </Link>
           </div>
 
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center space-x-4">
+             {/* Mobile Language Toggle */}
+            <button 
+              onClick={toggleLanguage}
+              className="flex items-center space-x-1 bg-brand-green text-black px-3 py-1.5 rounded-full text-xs font-bold shadow-[0_0_10px_rgba(0,200,5,0.2)]"
+            >
+              <span>{language === 'en' ? 'EN' : 'AM'}</span>
+            </button>
+
             <button onClick={() => setIsOpen(!isOpen)} className="text-gray-300 hover:text-white p-2">
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -67,17 +87,17 @@ const Header = () => {
           <div className="px-4 pt-2 pb-6 space-y-2">
             {isHome ? (
               <>
-                <a href="#features" onClick={(e) => handleNavClick(e, 'features')} className="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-brand-border/50 transition-colors">Program</a>
-                <a href="#testimonials" onClick={(e) => handleNavClick(e, 'testimonials')} className="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-brand-border/50 transition-colors">Stories</a>
-                <a href="#pricing" onClick={(e) => handleNavClick(e, 'pricing')} className="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-brand-border/50 transition-colors">Pricing</a>
-                <a href="#faq" onClick={(e) => handleNavClick(e, 'faq')} className="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-brand-border/50 transition-colors">FAQ</a>
+                <a href="#features" onClick={(e) => handleNavClick(e, 'features')} className="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-brand-border/50 transition-colors">{t.nav.program}</a>
+                <a href="#testimonials" onClick={(e) => handleNavClick(e, 'testimonials')} className="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-brand-border/50 transition-colors">{t.nav.stories}</a>
+                <a href="#pricing" onClick={(e) => handleNavClick(e, 'pricing')} className="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-brand-border/50 transition-colors">{t.nav.pricing}</a>
+                <a href="#faq" onClick={(e) => handleNavClick(e, 'faq')} className="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-brand-border/50 transition-colors">{t.nav.faq}</a>
               </>
             ) : (
-               <Link to="/" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-brand-border/50 transition-colors">Back to Home</Link>
+               <Link to="/" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-brand-border/50 transition-colors">{t.nav.backHome}</Link>
             )}
             <div className="pt-4 pb-2">
               <Link to="/booking" onClick={() => setIsOpen(false)} className="block w-full text-center bg-brand-green text-black font-bold px-4 py-3 rounded-lg hover:bg-green-500 transition-colors shadow-lg">
-                Apply Now
+                {t.nav.apply}
               </Link>
             </div>
           </div>

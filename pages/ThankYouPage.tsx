@@ -1,9 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CheckCircle, Wallet, CreditCard, Home } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const ThankYouPage = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-brand-dark flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -15,15 +17,15 @@ const ThankYouPage = () => {
           <CheckCircle className="w-10 h-10 text-brand-green" />
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Application Received!</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{t.thankYou.title}</h1>
         <p className="text-xl text-gray-300 mb-10 max-w-lg mx-auto leading-relaxed">
-          Thank you for applying. You have taken the first step towards mastering your productivity.
+          {t.thankYou.subtitle}
         </p>
 
         <div className="bg-brand-card border border-brand-border rounded-2xl p-8 mb-10 text-left shadow-2xl">
-          <h3 className="text-lg font-bold text-white mb-4 border-b border-brand-border pb-4">Next Step: Secure Your Spot</h3>
+          <h3 className="text-lg font-bold text-white mb-4 border-b border-brand-border pb-4">{t.thankYou.nextStepTitle}</h3>
           <p className="text-gray-400 mb-6 text-sm">
-            To finalize your enrollment, please complete the payment via one of the methods below and send a screenshot of the receipt.
+            {t.thankYou.nextStepDesc}
           </p>
 
           <div className="space-y-4">
@@ -52,7 +54,7 @@ const ThankYouPage = () => {
           
            <div className="mt-6 p-4 bg-blue-500/5 border border-blue-500/10 rounded-xl">
               <p className="text-sm text-blue-200 text-center">
-                 Already paid? Send your receipt to us via Telegram or WhatsApp to confirm your slot immediately.
+                 {t.thankYou.paymentNote}
               </p>
            </div>
         </div>
@@ -62,7 +64,7 @@ const ThankYouPage = () => {
           className="inline-flex items-center justify-center px-8 py-3 border border-brand-border rounded-full text-white hover:bg-brand-card transition-colors font-medium"
         >
           <Home className="w-4 h-4 mr-2" />
-          Back to Homepage
+          {t.thankYou.backButton}
         </button>
       </div>
     </div>

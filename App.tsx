@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import LandingPage from './pages/LandingPage';
 import BookingPage from './pages/BookingPage';
 import ThankYouPage from './pages/ThankYouPage';
+import { LanguageProvider } from './context/LanguageContext';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -19,21 +20,23 @@ const ScrollToTop = () => {
 
 function App() {
   return (
-    <HashRouter>
-      <ScrollToTop />
-      <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green selection:text-black flex flex-col">
-        <Header />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/booking" element={<BookingPage />} />
-            <Route path="/thank-you" element={<ThankYouPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </HashRouter>
+    <LanguageProvider>
+      <HashRouter>
+        <ScrollToTop />
+        <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green selection:text-black flex flex-col">
+          <Header />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/booking" element={<BookingPage />} />
+              <Route path="/thank-you" element={<ThankYouPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </HashRouter>
+    </LanguageProvider>
   );
 }
 
