@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Zap, Send, Instagram, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -21,7 +21,7 @@ const Footer = () => {
               {t.footer.desc}
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-500 hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
+              <a href="#" className="text-gray-500 hover:text-white transition-colors"><Send className="w-5 h-5" /></a>
               <a href="#" className="text-gray-500 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
               <a href="#" className="text-gray-500 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
             </div>

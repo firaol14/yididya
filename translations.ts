@@ -1,3 +1,4 @@
+
 export const translations = {
   en: {
     nav: {
@@ -13,7 +14,7 @@ export const translations = {
       badge: "Accepting Applicants for 1:1 Coaching",
       headlineStart: "Stop Procrastinating.",
       headlineEnd: "Start Achieving.",
-      subheadline: "The 3-Month System to Master Your Productivity and",
+      subheadline: "The 3 Month System to Master Your Productivity and",
       subheadlineHighlight: "Build a Life You're Proud Of.",
       ctaPrimary: "Start Your Transformation",
       pillars: ["Discipline", "Consistency", "Growth", "Focus"]
@@ -58,7 +59,7 @@ export const translations = {
     },
     roadmap: {
       badge: "The Roadmap",
-      title: "The 3-Month Transformation",
+      title: "The 3 Month Transformation",
       subtitle: "This is a structured system designed to help you become the most disciplined version of yourself.",
       steps: [
         {
@@ -83,7 +84,7 @@ export const translations = {
     },
     programIncludes: {
       title: "What You Get Inside The Program",
-      subtitle: "This is a deep, targeted transformation with a 3-month lock-in commitment.",
+      subtitle: "This is a deep, targeted transformation with a 3 month lock-in commitment.",
       items: [
         {
           title: "High-Frequency Coaching",
@@ -159,14 +160,14 @@ export const translations = {
           "Personalized Guides & Programs",
           "Free Journal Book or Planner"
         ],
-        commitment: "3-Month Commitment Required"
+        commitment: "3 Month Commitment Required"
       },
       paymentMethods: "Secure Payment Methods Accepted"
     },
     cta: {
       titleStart: "Are You Ready to",
       titleHighlight: "Change Your Life?",
-      desc: "Remember, this is a 3-month commitment. Do not let another month go by wishing you had started today.",
+      desc: "Remember, this is a 3 month commitment. Do not let another month go by wishing you had started today.",
       buttonPrimary: "Apply Now",
       buttonSecondary: "Read My Story",
       note: "Limited spots available for this round"
@@ -210,7 +211,7 @@ export const translations = {
     booking: {
       back: "Back to Home",
       title: "Secure Your Spot",
-      subtitle: "Complete the application below to join the 3-Month Productivity Coaching Program.",
+      subtitle: "Complete the application below to join the 3 Month Productivity Coaching Program.",
       form: {
         name: "Full Name",
         namePlaceholder: "Enter your full name",
@@ -223,7 +224,7 @@ export const translations = {
         paymentLabel: "Select Payment Plan",
         submit: "Submit Application",
         processing: "Processing...",
-        disclaimer: "By submitting, you agree to commit to the 3-month program structure."
+        disclaimer: "By submitting, you agree to commit to the 3 month program structure."
       }
     },
     thankYou: {
@@ -247,7 +248,7 @@ export const translations = {
     },
     hero: {
       badge: "ለ 1:1 ስልጠና አመልካቾችን በመቀበል ላይ",
-      headlineStart: "ማዘግየትን አቁም::",
+      headlineStart: "ፕሮክራስትኔሽን አቁም::",
       headlineEnd: "ስኬትን ጀምር::",
       subheadline: "ምርታማነትዎን ለመቆጣጠር እና",
       subheadlineHighlight: "የሚኮሩበትን ህይወት ለመገንባት የ3-ወር ስርዓት።",
